@@ -1,0 +1,6 @@
+{
+  "name": "Garena Email Verification Dashboard",
+  "description": "Professional dashboard for Garena email registration verification, official CAPTCHA challenge handling, and real-time API response analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

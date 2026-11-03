@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 800;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0.4;
+  }
+  33% {
+    transform: translateY(-25px) translateX(15px) scale(1.15);
+    opacity: 0.8;
+  }
+  66% {
+    transform: translateY(15px) translateX(-20px) scale(0.9);
+    opacity: 0.5;
+  }
+}
+
+@keyframes pulseNeonGlow {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes borderRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmerWave {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-float-slow {
+  animation: floatParticle 8s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatParticle 11s ease-in-out infinite 2s;
+}
+
+.animate-float-fast {
+  animation: floatParticle 6s ease-in-out infinite 1s;
+}
+
+.animate-neon-pulse {
+  animation: pulseNeonGlow 5s ease-in-out infinite;
+}
+
+.animate-border-rotate {
+  animation: borderRotate 6s linear infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.18) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmerWave 2s infinite;
+}
+
+/* 3D Button Utility */
+.btn-3d {
+  transform: perspective(600px) translateZ(0);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-3d:hover {
+  transform: perspective(600px) translateY(-3px) scale(1.01);
+  box-shadow: 0 14px 28px -6px rgba(229, 29, 36, 0.45), 0 0 18px rgba(229, 29, 36, 0.35);
+}
+
+.btn-3d:active {
+  transform: perspective(600px) translateY(1px) scale(0.985);
+  box-shadow: 0 4px 10px -2px rgba(229, 29, 36, 0.3);
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3B82F633;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3B82F666;
+}
